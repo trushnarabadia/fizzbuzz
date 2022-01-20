@@ -33,3 +33,24 @@ describe 'fizzbuzz' do
   end
 end
 
+describe 'fizzbuzz' do
+  (1..100).each do |number|
+    if number % 3 == 0 and number % 5 == 0
+      it 'return a number divisible by 3 and 5' do
+        expect(fizzbuzz(number)).to eq 'fizzbuzz'
+      end
+    elsif number % 3 == 0
+      it 'return a number divisible by 3' do
+        expect(fizzbuzz(number)).to eq 'fizz'
+      end
+    elsif number % 5 == 0
+      it 'return a number divisible by 5' do
+        expect(fizzbuzz(number)).to eq 'buzz'
+      end
+    else
+      it 'return a number not divisible by 3 or 5' do
+        expect(fizzbuzz(number)).to eq number
+      end
+    end
+  end
+end
